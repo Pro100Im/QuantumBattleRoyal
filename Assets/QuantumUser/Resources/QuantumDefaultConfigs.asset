@@ -183,10 +183,10 @@ MonoBehaviour:
     - 
     - Water
     - UI
-    - 
-    - 
-    - 
-    - 
+    - Player_Local
+    - Player_Remote
+    - Ground
+    - Grass
     - 
     - 
     - 

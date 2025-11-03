@@ -2,7 +2,7 @@ namespace Quantum
 {
     using Photon.Deterministic;
 
-    public unsafe class CharacterMovableSystem : SystemMainThreadFilter<CharacterMovableSystem.Filter>
+    public unsafe class CharacterMovableSystem : SystemMainThreadFilter<CharacterMovableSystem.Filter>, ISignalOnTriggerEnter2D, ISignalOnTriggerExit2D
     {
         public struct Filter
         {
@@ -36,6 +36,28 @@ namespace Quantum
             var dir = input->MousePosition - filter.Transform->Position;
 
             filter.Transform->Rotation = FPVector2.RadiansSigned(FPVector2.Up, dir);
+        }
+
+        public void OnTriggerEnter2D(Frame f, TriggerInfo2D info)
+        {
+            if (!f.TryGet<PlayerLink>(info.Entity, out var playerLink))
+                return;
+
+            if (!f.TryGet<Grass>(info.Other, out _))
+                return;
+
+            f.Events.OnPlayerEnteredGrass(playerLink.Player);
+        }
+
+        public void OnTriggerExit2D(Frame f, ExitInfo2D info)
+        {
+            if (!f.TryGet<PlayerLink>(info.Entity, out var playerLink))
+                return;
+
+            if (!f.TryGet<Grass>(info.Other, out _))
+                return;
+
+            f.Events.OnPlayerExitGrass(playerLink.Player);
         }
     }
 }
