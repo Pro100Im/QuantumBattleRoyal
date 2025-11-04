@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: -1235354404938736758}
   - component: {fileID: -6420713248601559952}
   - component: {fileID: 4239405805666600577}
+  - component: {fileID: 625496174013773218}
+  - component: {fileID: 6369954491734863953}
   m_Layer: 6
   m_Name: Character_Base
   m_TagString: Untagged
@@ -484,6 +486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: QuantumUser.View::PlayerView
   _animator: {fileID: 534198499139429989}
   _overHeadUI: {fileID: 1892350581194458970}
+  _nickName: {fileID: 1447206199820168171}
+  _speedAnimMultiplier: 1.5
 --- !u!114 &4239405805666600577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +506,37 @@ MonoBehaviour:
     WeaponData:
       Id:
         Value: 320410077660706120
+--- !u!114 &625496174013773218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326267824891306075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3b7c68310e78f418bf02f4b741e09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Quantum.Unity::Quantum.QPrototypeDamageable
+  Prototype:
+    Health:
+      RawValue: 0
+    DamageableData:
+      Id:
+        Value: 411233080327645911
+--- !u!114 &6369954491734863953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326267824891306075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3e5e7b082437a4c9a6793f5844f25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: QuantumUser.View::DamageableView
+  _health: {fileID: 1497564469917106863}
 --- !u!1 &1739315570316238824
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +596,7 @@ GameObject:
   - component: {fileID: 5844126019847679880}
   - component: {fileID: 4370682288682822821}
   - component: {fileID: 9085244594456279735}
+  - component: {fileID: 3333144494715660127}
   m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
@@ -652,6 +688,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3333144494715660127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892350581194458970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9098a8959c3a241b322162fe4ddb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: QuantumUser.View::LookAtCamera
 --- !u!1 &4650006189429459219
 GameObject:
   m_ObjectHideFlags: 0

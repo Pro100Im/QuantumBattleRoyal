@@ -1058,6 +1058,11 @@ MonoBehaviour:
     - rid: 6576076655855403009
     - rid: 6576076655855403010
     - rid: 6576076655855403011
+  - Components:
+    - rid: 7598076252926246912
+    - rid: 7598076252926246913
+    - rid: 7598076252926246914
+    - rid: 7598076252926246915
   SerializedTriangleDataUncompressedSize: 8
   references:
     version: 2
@@ -1195,6 +1200,66 @@ MonoBehaviour:
       type: {class: SpawnPointPrototype, ns: Quantum.Prototypes, asm: Quantum.Simulation}
       data:
         _empty_prototype_dummy_field_: 0
+    - rid: 7598076252926246912
+      type: {class: Transform2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        Position:
+          X:
+            RawValue: 104930
+          Y:
+            RawValue: 73400
+        Rotation:
+          RawValue: 0
+    - rid: 7598076252926246913
+      type: {class: PhysicsCollider2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        ShapeConfig:
+          ShapeType: 4
+          PolygonCollider:
+            Id:
+              Value: 0
+          CircleRadius:
+            RawValue: 32768
+          CapsuleSize:
+            X:
+              RawValue: 65536
+            Y:
+              RawValue: 131072
+          EdgeExtent:
+            RawValue: 32768
+          BoxExtents:
+            X:
+              RawValue: 32768
+            Y:
+              RawValue: 32768
+          PositionOffset:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+          RotationOffset:
+            RawValue: 0
+          UserTag: 0
+          IsPersistent: 1
+          CompoundShapes: []
+        Layer: 0
+        IsTrigger: 0
+        PhysicsMaterial:
+          Id:
+            Value: 0
+    - rid: 7598076252926246914
+      type: {class: PhysicsCallbacks2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        CallbackFlags:
+          Value: 0
+    - rid: 7598076252926246915
+      type: {class: DamageablePrototype, ns: Quantum.Prototypes, asm: Quantum.Simulation}
+      data:
+        Health:
+          RawValue: 0
+        DamageableData:
+          Id:
+            Value: 411233080327645911
     - rid: 8372836450592358400
       type: {class: Transform2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
       data:

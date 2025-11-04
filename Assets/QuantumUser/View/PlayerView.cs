@@ -1,10 +1,14 @@
 using Quantum;
+using TMPro;
 using UnityEngine;
 
 public unsafe class PlayerView : QuantumEntityViewComponent
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _overHeadUI;
+    [SerializeField] private TextMeshProUGUI _nickName;
+    [SerializeField]
+    [Range(1, 2)] private float _speedAnimMultiplier = 1.5f;
 
     private readonly int _moveXHash = Animator.StringToHash("moveX");
     private readonly int _moveZHash = Animator.StringToHash("moveZ");
@@ -21,7 +25,11 @@ public unsafe class PlayerView : QuantumEntityViewComponent
     {
         base.OnActivate(f);
 
-        _isLocalPlayer = _game.PlayerIsLocal(f.Get<PlayerLink>(EntityRef).Player);
+        var playerLink = f.Get<PlayerLink>(EntityRef);
+        var playerData = f.GetPlayerData(playerLink.Player);
+
+        _nickName.text = playerData.PlayerNickname;
+        _isLocalPlayer = _game.PlayerIsLocal(playerLink.Player);
 
         var layer = UnityEngine.LayerMask.NameToLayer(_isLocalPlayer ? "Player_Local" : "Player_Remote");
 
@@ -71,6 +79,9 @@ public unsafe class PlayerView : QuantumEntityViewComponent
 
     public override void OnUpdateView()
     {
+        if (!PredictedFrame.Exists(EntityRef))
+            return;
+
         base.OnUpdateView();
 
         UpdateAnimator();
@@ -78,13 +89,13 @@ public unsafe class PlayerView : QuantumEntityViewComponent
 
     private void UpdateAnimator()
     {
-        var plaerRef = PredictedFrame.Get<PlayerLink>(EntityRef).Player;
-        var input = PredictedFrame.GetPlayerInput(plaerRef);
-        var kcc = PredictedFrame.Get<KCC>(EntityRef);
-        var velocity = kcc.Velocity;
+        var playerRef = PredictedFrame.Get<PlayerLink>(EntityRef).Player;
+        var input = PredictedFrame.GetPlayerInput(playerRef);
+        var transform = PredictedFrame.Get<Transform2D>(EntityRef);
+        var rotationDirection = input->Direction.Rotate(-transform.Rotation).ToUnityVector2() * _speedAnimMultiplier;
 
-        _animator.SetFloat(_moveXHash, velocity.X.AsFloat);
-        _animator.SetFloat(_moveZHash, velocity.Y.AsFloat);
+        _animator.SetFloat(_moveXHash, rotationDirection.x);
+        _animator.SetFloat(_moveZHash, rotationDirection.y);
     }
 
     public override void OnDeactivate()

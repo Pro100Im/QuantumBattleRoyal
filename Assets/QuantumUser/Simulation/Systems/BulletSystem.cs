@@ -21,6 +21,9 @@ namespace Quantum
 
             if(CheckForCollisions(f, filter, nextPosition, out var entityHit))
             {
+                if (f.Unsafe.TryGetPointer<Damageable>(entityHit, out var damageable))
+                    f.Signals.DamageableHit(entityHit, filter.Bullet->Owner, filter.Bullet->Damage, damageable);
+
                 f.Destroy(filter.Entity);
 
                 return;
