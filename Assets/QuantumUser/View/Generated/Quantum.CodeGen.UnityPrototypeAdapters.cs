@@ -50,6 +50,27 @@ namespace Quantum.Prototypes.Unity {
   #endif //;
   
   [System.SerializableAttribute()]
+  public unsafe partial class BulletPrototype : Quantum.QuantumUnityPrototypeAdapter<Quantum.Prototypes.BulletPrototype> {
+    public Quantum.QuantumEntityPrototype Owner;
+    public FP Damage;
+    public FP Time;
+    public FP Speed;
+    public FP HeightOffset;
+    public FPVector2 Direction;
+    partial void ConvertUser(Quantum.QuantumEntityPrototypeConverter converter, ref Quantum.Prototypes.BulletPrototype prototype);
+    public override Quantum.Prototypes.BulletPrototype Convert(Quantum.QuantumEntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.BulletPrototype();
+      converter.Convert(this.Owner, out result.Owner);
+      converter.Convert(this.Damage, out result.Damage);
+      converter.Convert(this.Time, out result.Time);
+      converter.Convert(this.Speed, out result.Speed);
+      converter.Convert(this.HeightOffset, out result.HeightOffset);
+      converter.Convert(this.Direction, out result.Direction);
+      ConvertUser(converter, ref result);
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
   public unsafe partial class SpawnPointManagerPrototype : Quantum.QuantumUnityPrototypeAdapter<Quantum.Prototypes.SpawnPointManagerPrototype> {
     [AllocateOnComponentAdded()]
     [DynamicCollectionAttribute()]

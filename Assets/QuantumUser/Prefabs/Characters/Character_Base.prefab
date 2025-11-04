@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1207207116166133795}
   - component: {fileID: -1235354404938736758}
   - component: {fileID: -6420713248601559952}
+  - component: {fileID: 4239405805666600577}
   m_Layer: 6
   m_Name: Character_Base
   m_TagString: Untagged
@@ -483,6 +484,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: QuantumUser.View::PlayerView
   _animator: {fileID: 534198499139429989}
   _overHeadUI: {fileID: 1892350581194458970}
+--- !u!114 &4239405805666600577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326267824891306075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44bcdc95bf0b5b41ad23a630b149b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Quantum.Unity::Quantum.QPrototypeWeapon
+  Prototype:
+    CoolDownTime:
+      RawValue: 0
+    WeaponData:
+      Id:
+        Value: 320410077660706120
 --- !u!1 &1739315570316238824
 GameObject:
   m_ObjectHideFlags: 0
