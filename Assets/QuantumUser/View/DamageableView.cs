@@ -10,10 +10,10 @@ public class DamageableView : QuantumEntityViewComponent
     {
         base.OnActivate(frame);
 
-        QuantumEvent.Subscribe<EventDamageableHit>(this, Handler);
+        QuantumEvent.Subscribe<EventDamageableHealthUpdate>(this, Handler);
     }
 
-    private void Handler(EventDamageableHit callback)
+    private void Handler(EventDamageableHealthUpdate callback)
     {
         if (EntityRef != callback.entity)
             return;

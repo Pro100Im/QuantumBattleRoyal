@@ -4,7 +4,7 @@ namespace Quantum
     using UnityEngine.Scripting;
 
     [Preserve]
-    public unsafe class DamageableSystem : SystemSignalsOnly, ISignalOnComponentAdded<Damageable>, ISignalDamageableHit
+    public unsafe class DamageableSystem : SystemSignalsOnly, ISignalOnComponentAdded<Damageable>, ISignalDamageableHit, ISignalDamageableHealthRestored
     {
         public unsafe void OnAdded(Frame f, EntityRef entity, Damageable* component)
         {
@@ -18,6 +18,17 @@ namespace Quantum
             var damageableBaseAsset = f.FindAsset(damageable->DamageableData);
 
             damageableBaseAsset.TakeDamage(f, damager, vicitim, damage, damageable);
+        }
+
+        public unsafe void DamageableHealthRestored(Frame f, EntityRef entity, Damageable* damageable)
+        {
+            var health = f.FindAsset(damageable->DamageableData).MaxHealth;
+
+            damageable->Health = health;
+
+            Log.Info($"health {health}");
+
+            f.Events.DamageableHealthUpdate(entity, health, damageable->Health);
         }
     }
 }

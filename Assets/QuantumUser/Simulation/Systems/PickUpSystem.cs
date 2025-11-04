@@ -49,11 +49,9 @@ namespace Quantum
 
             filter.PickUpItem->CurrentPickUpTime += f.DeltaTime;
 
-            Log.Info($"filter.PickUpItem->CurrentPickUpTime {filter.PickUpItem->CurrentPickUpTime}");
-
             if(filter.PickUpItem->CurrentPickUpTime >= filter.PickUpItem->PickUpTime)
             {
-                var baseAsset = f.FindAsset<PickUpAsset>(filter.PickUpItem->PickUpAsset);
+                var baseAsset = f.FindAsset(filter.PickUpItem->PickUpAsset);
 
                 baseAsset.PickUpItem(f, filter.Entity, filter.PickUpItem->PickingUpEntity);
             }
