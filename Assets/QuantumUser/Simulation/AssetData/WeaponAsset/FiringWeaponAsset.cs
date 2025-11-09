@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Quantum
 {
-    public unsafe class FiringWeaponAsset : WeaponAsset
+    public abstract unsafe class FiringWeaponAsset : WeaponAsset
     {
         public BulletData BulletData;
 

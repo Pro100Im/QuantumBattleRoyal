@@ -27,3 +27,9 @@ enum WeaponType
 }
 
 signal CreateBullet(EntityRef owner, FiringWeaponAsset weaponData);
+
+event WeaponChange
+{
+    PlayerRef Player;
+    WeaponType Type;
+}

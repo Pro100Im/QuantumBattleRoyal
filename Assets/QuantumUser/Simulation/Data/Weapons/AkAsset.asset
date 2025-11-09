@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb340f532d9ac44dbc301b7065b7ba6, type: 3}
-  m_Name: DefaultWeaponAsset
-  m_EditorClassIdentifier: Quantum.Simulation::Quantum.WeaponAsset
+  m_Script: {fileID: 11500000, guid: f171630df80ebf9489e4a5defcd53655, type: 3}
+  m_Name: AkAsset
+  m_EditorClassIdentifier: Quantum.Simulation::Quantum.AutomaticWeaponAsset
   Identifier:
-    Path: QuantumUser/Simulation/Data/Weapons/DefaultWeaponAsset
+    Path: QuantumUser/Simulation/Data/Weapons/AkAsset
     Guid:
-      Value: 534705678764306083
+      Value: 439883190375719031
+  Type: 0
   CoolDown:
-    RawValue: 65536
+    RawValue: 6554
   Offset:
     X:
       RawValue: 22938
@@ -25,3 +26,5 @@ MonoBehaviour:
       RawValue: 98304
     Z:
       RawValue: 117965
+  BulletData: {fileID: 11400000, guid: 5e15c80489e01fb418093734cb01efbe, type: 2}
+  MaxAmmo: 30

@@ -2,8 +2,9 @@ namespace Quantum
 {
     using Photon.Deterministic;
 
-    public unsafe class WeaponAsset : AssetObject
+    public abstract unsafe class WeaponAsset : AssetObject
     {
+        public WeaponType Type;
         public FP CoolDown;
         public FPVector3 Offset;
 

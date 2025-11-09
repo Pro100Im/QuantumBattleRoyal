@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 4239405805666600577}
   - component: {fileID: 625496174013773218}
   - component: {fileID: 6369954491734863953}
+  - component: {fileID: 4138613150812920238}
   m_Layer: 6
   m_Name: Character_Base
   m_TagString: Untagged
@@ -540,6 +541,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: QuantumUser.View::DamageableView
   _health: {fileID: 1497564469917106863}
+--- !u!114 &4138613150812920238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326267824891306075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f0ab4e70555ab4dbd61180d29173b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: QuantumUser.View::Quantum.PlayerWeaponView
+  _currentWeapon: {fileID: 0}
 --- !u!1 &1739315570316238824
 GameObject:
   m_ObjectHideFlags: 0

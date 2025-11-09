@@ -16,6 +16,7 @@ MonoBehaviour:
     Path: QuantumUser/Simulation/Data/Weapons/PistolAsset
     Guid:
       Value: 380075566357679406
+  Type: 1
   CoolDown:
     RawValue: 65536
   Offset:
