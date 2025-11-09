@@ -1073,10 +1073,147 @@ MonoBehaviour:
     - rid: 3511777778338889729
     - rid: 3511777778338889730
     - rid: 3511777778338889731
+  - Components:
+    - rid: 987193774809546752
+    - rid: 987193774809546753
+    - rid: 987193774809546754
+    - rid: 987193774809546755
+    - rid: 987193774809546756
+  - Components:
+    - rid: 783077869986250752
+    - rid: 783077869986250753
   SerializedTriangleDataUncompressedSize: 8
   references:
     version: 2
     RefIds:
+    - rid: 783077869986250752
+      type: {class: Transform2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        Position:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+        Rotation:
+          RawValue: 0
+    - rid: 783077869986250753
+      type: {class: ShrinkingCirclePrototype, ns: Quantum.Prototypes, asm: Quantum.Simulation}
+      data:
+        Asset:
+          Id:
+            Value: 433974055765780128
+        CurrentState:
+          TimeToNextState:
+            RawValue: 0
+          CircleStateUnion:
+            _field_used_: 
+            InitialState:
+              InitialRadius:
+                RawValue: 0
+            PreShrinkState:
+              TargetRadius:
+                RawValue: 0
+            ShrinkState:
+              ShrinkingCircleTime:
+                RawValue: 0
+            CooledDownState:
+              _empty_prototype_dummy_field_: 0
+        CurrentTimeToNextState:
+          RawValue: 0
+        CurrentRadius:
+          RawValue: 0
+        TargetRadius:
+          RawValue: 0
+        InitialRadiusOfState:
+          RawValue: 0
+        Position:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+        CurrentStateIndex: 0
+    - rid: 987193774809546752
+      type: {class: Transform2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        Position:
+          X:
+            RawValue: 82793816
+          Y:
+            RawValue: 0
+        Rotation:
+          RawValue: 0
+    - rid: 987193774809546753
+      type: {class: PhysicsCollider2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        ShapeConfig:
+          ShapeType: 1
+          PolygonCollider:
+            Id:
+              Value: 0
+          CircleRadius:
+            RawValue: 140902
+          CapsuleSize:
+            X:
+              RawValue: 65536
+            Y:
+              RawValue: 131072
+          EdgeExtent:
+            RawValue: 32768
+          BoxExtents:
+            X:
+              RawValue: 32768
+            Y:
+              RawValue: 32768
+          PositionOffset:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+          RotationOffset:
+            RawValue: 0
+          UserTag: 0
+          IsPersistent: 1
+          CompoundShapes: []
+        Layer: 10
+        IsTrigger: 1
+        PhysicsMaterial:
+          Id:
+            Value: 0
+    - rid: 987193774809546754
+      type: {class: PhysicsCallbacks2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
+      data:
+        CallbackFlags:
+          Value: 0
+    - rid: 987193774809546755
+      type: {class: PickUpItemPrototype, ns: Quantum.Prototypes, asm: Quantum.Simulation}
+      data:
+        PickingUpEntity:
+          SceneIndexPlusOne: 0
+        CurrentPickUpTime:
+          RawValue: 0
+        PickUpTime:
+          RawValue: 0
+        PickUpAsset:
+          Id:
+            Value: 454900153537957612
+    - rid: 987193774809546756
+      type: {class: ShrinkingCircleStatePrototype, ns: Quantum.Prototypes, asm: Quantum.Simulation}
+      data:
+        TimeToNextState:
+          RawValue: 0
+        CircleStateUnion:
+          _field_used_: 
+          InitialState:
+            InitialRadius:
+              RawValue: 0
+          PreShrinkState:
+            TargetRadius:
+              RawValue: 0
+          ShrinkState:
+            ShrinkingCircleTime:
+              RawValue: 0
+          CooledDownState:
+            _empty_prototype_dummy_field_: 0
     - rid: 2199991820069371904
       type: {class: Transform2DPrototype, ns: Quantum.Prototypes, asm: Quantum.Engine}
       data:
