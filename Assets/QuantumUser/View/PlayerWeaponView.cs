@@ -39,7 +39,9 @@ namespace Quantum
                 return;
 
             _currentWeapon.gameObject.SetActive(false);
+            _currentWeapon.Rig.weight = 0f;
             _currentWeapon = _weapons[callback.Type];
+            _currentWeapon.Rig.weight = 1f;
             _currentWeapon.gameObject.SetActive(true);
         }
 

@@ -1,9 +1,11 @@
 namespace Quantum
 {
     using Photon.Deterministic;
+    using UnityEngine;
 
     public abstract unsafe class WeaponAsset : AssetObject
     {
+        public Sprite Sprite;
         public WeaponType Type;
         public FP CoolDown;
         public FPVector3 Offset;

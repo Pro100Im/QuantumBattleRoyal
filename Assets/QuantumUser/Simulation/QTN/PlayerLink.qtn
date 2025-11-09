@@ -10,3 +10,8 @@ input
 
     button Fire;
 }
+
+event PlayerSpawned{
+    PlayerRef Player;
+    EntityRef Entity;
+}

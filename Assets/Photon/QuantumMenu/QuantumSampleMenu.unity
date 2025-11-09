@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7243461719588803421, guid: 7d78f8a9ae2bcc1408312ef78f87bdf0, type: 3}
       propertyPath: ConnectArgs.RuntimePlayers.Array.data[0].PlayerAvatar.Id.Value
-      value: 1359492416221081643
+      value: 1471607647664621956
       objectReference: {fileID: 0}
     - target: {fileID: 7545343568668095747, guid: 7d78f8a9ae2bcc1408312ef78f87bdf0, type: 3}
       propertyPath: m_Pivot.x

@@ -12,6 +12,8 @@ namespace Quantum
             var playerEntity = CreatePlayer(f, player);
 
             PlacePlayerOnSpawnPosition(f, playerEntity);
+
+            f.Events.PlayerSpawned(player, playerEntity);
         }
 
         private EntityRef CreatePlayer(Frame f, PlayerRef player)
