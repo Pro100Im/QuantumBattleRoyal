@@ -39,6 +39,8 @@ namespace Quantum
             shrinkingCircle->CurrentStateIndex++;
             asset.States[shrinkingCircle->CurrentStateIndex].Materialize(f, ref shrinkingCircle->CurrentState);
             shrinkingCircle->CurrentState.EnterState(shrinkingCircle);
+
+            f.Events.ShrinkingCircleChangeState();
         }
     }
 }

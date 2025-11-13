@@ -47,3 +47,8 @@ struct CooledDownState
 {
     
 }
+
+synced event ShrinkingCircleChangeState
+{
+   
+}

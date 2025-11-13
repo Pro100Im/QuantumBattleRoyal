@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Quantum;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 public class DamageableView : QuantumEntityViewComponent
 {
     [SerializeField] private Image _health;
+
+    private Tween _tween;
 
     public override void OnActivate(Frame frame)
     {
@@ -20,7 +23,8 @@ public class DamageableView : QuantumEntityViewComponent
 
         var precentage = (callback.currentHealth / callback.maxHealth).AsFloat;
 
-        _health.fillAmount = precentage;
+        _tween?.Kill();
+        _health.DOFillAmount(precentage, .1f);
     }
 
     public override void OnDeactivate()
