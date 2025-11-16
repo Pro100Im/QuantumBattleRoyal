@@ -40,7 +40,7 @@ namespace QuantumUser.View
             if (!callback.Game.PlayerIsLocal(callback.Player))
                 return;
 
-            var f = callback.Game.Frames.Verified;
+            var f = callback.Game.Frames.Predicted;
 
             FillImageAndText(f, callback.Entity);
         }
