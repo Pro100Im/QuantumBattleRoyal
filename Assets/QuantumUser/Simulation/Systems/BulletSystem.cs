@@ -66,20 +66,8 @@ namespace Quantum
         public void CreateBullet(Frame f, EntityRef owner, FiringWeaponAsset weaponData)
         {
             var bulletData = weaponData.BulletData;
-            var bulletEntity = f.Create(bulletData.Bullet);
-            var bulletTransform = f.Unsafe.GetPointer<Transform2D>(bulletEntity);
-            var ownerTransform = f.Get<Transform2D>(owner);
-            var bullet = f.Unsafe.GetPointer<Bullet>(bulletEntity);
 
-            bulletTransform->Position = ownerTransform.Position + weaponData.Offset.XZ.Rotate(ownerTransform.Rotation);
-            bulletTransform->Rotation = ownerTransform.Rotation;
-
-            bullet->Speed = bulletData.Speed;
-            bullet->Damage = bulletData.Damage;
-            bullet->Time = bulletData.Duration;
-            bullet->Owner = owner;
-            bullet->HeightOffset = weaponData.Offset.Y;
-            bullet->Direction = ownerTransform.Up;
+            bulletData.CreateBullet(f, weaponData, owner);
         }
     }
 }

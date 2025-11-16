@@ -1,0 +1,18 @@
+singleton component GameManager
+{
+    GameState currentState;
+    FP TimeToWaitForPlayers;
+    AssetRef<GameManagerAsset> GameManagerAsset;
+}
+
+enum GameState
+{
+    WaitingForPlayers,
+    Playing,
+    GameOver
+} 
+
+event GameOver
+{
+    EntityRef Winner;
+}

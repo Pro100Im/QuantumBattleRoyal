@@ -121,6 +121,25 @@ namespace Quantum.Prototypes {
     }
   }
   [System.SerializableAttribute()]
+  [Quantum.Prototypes.Prototype(typeof(Quantum.GameManager))]
+  public unsafe partial class GameManagerPrototype : ComponentPrototype<Quantum.GameManager> {
+    public Quantum.QEnum32<GameState> currentState;
+    public FP TimeToWaitForPlayers;
+    public AssetRef<GameManagerAsset> GameManagerAsset;
+    partial void MaterializeUser(Frame frame, ref Quantum.GameManager result, in PrototypeMaterializationContext context);
+    public override Boolean AddToEntity(FrameBase f, EntityRef entity, in PrototypeMaterializationContext context) {
+        Quantum.GameManager component = default;
+        Materialize((Frame)f, ref component, in context);
+        return f.Set(entity, component) == SetResult.ComponentAdded;
+    }
+    public void Materialize(Frame frame, ref Quantum.GameManager result, in PrototypeMaterializationContext context = default) {
+        result.currentState = this.currentState;
+        result.TimeToWaitForPlayers = this.TimeToWaitForPlayers;
+        result.GameManagerAsset = this.GameManagerAsset;
+        MaterializeUser(frame, ref result, in context);
+    }
+  }
+  [System.SerializableAttribute()]
   [Quantum.Prototypes.Prototype(typeof(Quantum.Grass))]
   public unsafe partial class GrassPrototype : ComponentPrototype<Quantum.Grass> {
     [HideInInspector()]

@@ -14,6 +14,11 @@ namespace Quantum
 
         public override void Update(Frame f, ref Filter filter)
         {
+            var gameManager = f.Unsafe.GetPointerSingleton<GameManager>();
+
+            if (gameManager->currentState != GameState.Playing)
+                return;
+
             var input = f.GetPlayerInput(filter.PlayerLink->Player);
 
             MovePlayer(f, ref filter, input);

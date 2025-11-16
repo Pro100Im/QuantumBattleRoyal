@@ -5,7 +5,7 @@ namespace Quantum
 {
     public abstract unsafe class FiringWeaponAsset : WeaponAsset
     {
-        public BulletData BulletData;
+        public BulletAsset BulletData;
 
         public byte MaxAmmo;
 
