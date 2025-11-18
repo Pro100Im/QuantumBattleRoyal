@@ -13,8 +13,8 @@ namespace Quantum
             {
                 DropLoot(f, victim);
 
-                f.Signals.PlayerKilled();
                 f.Destroy(victim);
+                f.Signals.PlayerKilled();
 
                 return;
             }

@@ -20,8 +20,6 @@ public class CountDownUI : QuantumSceneViewComponent
         var f = callback.Game.Frames.Predicted;
         var playerRef = f.Get<PlayerLink>(callback.Winner).Player;
         var playerData = f.GetPlayerData(playerRef);
-
-        Debug.Log($"Game Over! Winner: {playerData.PlayerNickname}");
     }
 
     public override void OnUpdateView()
