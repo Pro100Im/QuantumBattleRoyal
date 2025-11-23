@@ -1,5 +1,6 @@
 using Photon.Deterministic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Quantum
 {
@@ -48,7 +49,10 @@ namespace Quantum
             if(filter.Weapon->Ammo <= 0)
                 return;
 
-            filter.Weapon->CoolDownTime = CoolDown;
+            var characterStats = f.Get<CharacterStats>(filter.Entity);
+            var characterAsset = f.FindAsset(characterStats.CharacterStatsAsset);
+
+            filter.Weapon->CoolDownTime = CoolDown * characterAsset.FireRateMultiplier;
             filter.Weapon->Ammo--;
 
             f.Events.AmmoChange(filter.PlayerLink->Player, filter.Entity, filter.Weapon->Ammo);

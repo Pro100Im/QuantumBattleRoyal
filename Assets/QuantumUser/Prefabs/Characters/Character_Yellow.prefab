@@ -3542,13 +3542,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2118615417458924498, guid: 087898557506e714b83fb874784c9772, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1207538339604679636}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1326267824891306075, guid: 087898557506e714b83fb874784c9772, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8774472611341440526}
   m_SourcePrefab: {fileID: 100100000, guid: 087898557506e714b83fb874784c9772, type: 3}
 --- !u!4 &103592779283955498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 402285692930005623, guid: 087898557506e714b83fb874784c9772, type: 3}
   m_PrefabInstance: {fileID: 352755910400238941}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1622109706195453190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1326267824891306075, guid: 087898557506e714b83fb874784c9772, type: 3}
+  m_PrefabInstance: {fileID: 352755910400238941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8774472611341440526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622109706195453190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9deeb2c002e1192468b97e5793b3dbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Quantum.Unity::Quantum.QPrototypeCharacterStats
+  Prototype:
+    CharacterStatsAsset:
+      Id:
+        Value: 533352611350777825
 --- !u!4 &1838569116946759311 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2118615417458924498, guid: 087898557506e714b83fb874784c9772, type: 3}

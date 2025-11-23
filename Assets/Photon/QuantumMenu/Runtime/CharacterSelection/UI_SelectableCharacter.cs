@@ -10,6 +10,8 @@ namespace QuantumMenu.Runtime.CharacterSelection
         [SerializeField] private Image characterImage;
         [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private GameObject characterSelected;
+        [SerializeField] private TextMeshProUGUI healthMultiplier;
+        [SerializeField] private TextMeshProUGUI fireRateMultiplier;
 
         private CharacterModel _characterModel;
              
@@ -19,6 +21,8 @@ namespace QuantumMenu.Runtime.CharacterSelection
         {
             characterImage.sprite = characterModel.CharacterImage;
             characterName.text = characterModel.CharacterName;
+            healthMultiplier.text = characterModel.CharacterStatsAsset.HealthMultiplier.ToString();
+            fireRateMultiplier.text = characterModel.CharacterStatsAsset.FireRateMultiplier.ToString();
 
             _characterModel = characterModel;
         }

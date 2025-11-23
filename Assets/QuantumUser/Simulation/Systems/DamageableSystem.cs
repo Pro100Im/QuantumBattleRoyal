@@ -15,8 +15,10 @@ namespace Quantum
         public unsafe void OnAdded(Frame f, EntityRef entity, Damageable* component)
         {
             var damageableData = f.FindAsset(component->DamageableData);
+            var characterStats = f.Get<CharacterStats>(entity);
+            var characterAsset = f.FindAsset(characterStats.CharacterStatsAsset);
 
-            component->Health = damageableData.MaxHealth;
+            component->Health = damageableData.MaxHealth * characterAsset.HealthMultiplier;
         }
 
         public unsafe void DamageableHit(Frame f, EntityRef vicitim, EntityRef damager, FP damage, Damageable* damageable)
